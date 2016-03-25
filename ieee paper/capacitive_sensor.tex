@@ -94,7 +94,7 @@ The  capacitive  level  sensors  are  most  commonly  used  sensors  for  the  m
 \section{Introduction}
 % no \IEEEPARstart
 There can be many direct and indirect methods for increasing the linearity of sensor response. ANN applies one such method. The advantages of using ANN for increasing the linearity range are ease of programming and software portability. It uses the synaptic weights for the training to minimize the error between the desired output and the actual output. After training the hardwired version of neural network (with fixed synaptic weights) can be cascaded with the sensor in order to cancel the sensor’s nonlinear characteristics. [1]\\
-Jagdish Chandra Patra et al. propose Neural networks based scheme, when there is a change in ambient temperature, the ANN automatically compensates for this change based on the learning which it undergoes and on the information stored in its weights. The effect of change in environmental conditions on the capacitive sensors and subsequently upon the output is nonlinear in nature. Especially, change in ambient temperature causes response characteristics of the sensor to become highly nonlinear, and complex signal processing may be required to obtain correct readout. The purpose of direct modeling is to obtain an ANN model of the sensor in such a way that the outputs of the sensor and the ANN match closely. ANN model has been found to be capable of accurately estimating at any ambient temperature from 20oC to 70oC. This fact is the novel characteristic of the proposed ANN model. [2]\\
+Jagdish Chandra Patra et al. propose Neural networks based scheme, when there is a change in ambient temperature, the ANN automatically compensates for this change based on the learning which it undergoes and on the information stored in its weights. The effect of change in environmental conditions on the capacitive sensors and subsequently upon the output is nonlinear in nature. Especially, change in ambient temperature causes response characteristics of the sensor to become highly nonlinear, and complex signal processing may be required to obtain correct readout. The purpose of direct modeling is to obtain an ANN model of the sensor in such a way that the outputs of the sensor and the ANN match closely. ANN model has been found to be capable of accurately estimating at any ambient temperature from $20^o$C to $70^o$C. This fact is the novel characteristic of the proposed ANN model. [2]\\
 Artificial neural networks have emerged as a powerful learning technique to perform complex tasks nonlinear dynamic environments. An intelligent pressure sensor based on artificial neural networks to realize auto-calibration and nonlinear compensation of a CPS has been proposed with quite satisfactory performance. This technique can also be applied for other parameters such level etc. There are also some drawbacks of neural networks, such as neural networks can’t tell the redundant information from a huge amount of data, which will easily lead to some problems such as long training time and much computation. [3]\\
 As explained in the paper [4], the nonlinear operation of a Multi layer perceptron (MLP) neural network compensates the nonlinear characteristics of a sensor. Sensor linearization can be considered a function estimation (modeling) task, where the non-linear sensor output can be used as input data and the desired linearized response as target data. 
 The capability of a trained network can be measured to some extent by the errors on the training, validation and test sets. This can be done by applying unseen input to network and trace the output and compare with the sensor output. It has been proved successful in representing any measurable function within any desired degree of accuracy, with the correct values of pressures and sufficient number of hidden neurons. [5]
@@ -138,14 +138,20 @@ $\eta$ is the learning rate $0<\eta<1$, \\
 $W_i$ is value of weights at $i_{th}$ epoch
 
 This approach most of the times gets stuck in the local minima.  It is a generalization of the delta rule to multi-layered feedforward networks, made possible by using the chain rule to iteratively compute gradients for each layer.
-
-
 \begin{figure}[h]
 \includegraphics[width=8cm]{net.png}
 \centering
+\caption{Neural Network Structure}\label{net_img}
 \end{figure}
-\subsubsection{Support Vector machine Regression}
-
+\subsubsection{RBF Neural Network}
+Here we use Gaussian function as the radial basis function, shown in equation 5. It can also be interpreted as a rather simple single-layer type of artificial neural network called a radial basis function network, with the radial basis functions taking on the role of the activation functions of the network. 
+\begin{equation} \label{eq:3}
+\Phi(x) =   {e} ^ {\frac{- {||x-W||} ^ {2}}{{\sigma} ^ {2}}}
+\end{equation}\\
+\\Where,\\
+$\sigma^2$ is variance,\\
+x is input, $\Phi(x)$ is output of neuron\\
+W is the mean of the sigmoid function or weight of neuron\\
 \subsubsection{Extreme learning Machine}
 ELM is one step training algorithm, it uses least squares method to estimate the best fit for the weights of the neural network. \\
 Here output layer weights are computed, where the hidden layer weights are assigned to the random value. The hidden layer output matrix is assigned as H, then 
@@ -170,6 +176,7 @@ f is the frequency output and R1=1MΩ, R2=100KΩ
 \begin{figure}[h]
 \includegraphics[width=8cm]{ctof.png}
 \centering
+\caption{capacitance to frequency circuit diagram}\label{ctof_img}
 \end{figure}
 \\The high time and the low time in each pulse is given by (8) and (9) respectively.\\
 \begin{equation} \label{eq:4}
@@ -189,16 +196,19 @@ V_{out} = 2.09\frac{R_4}{R_5+R_6}R_1C_1VF_{in}
 \begin{figure}[h]
 \includegraphics[width=8cm]{ftov.png}
 \centering
+\caption{frequency to voltage circuit diagram}\label{ftov_img}
 \end{figure}
 \subsection{Implementation}
 ATMega328 microcontroller is used to implement the neural network where the input voltage is taken and their respective outputs are obtained and is displayed. Fig.3 shows the systematic flow. The input, which is level when changes, the capacitance of the cylindrical capacitive sensor changes results in change in frequency output of the capacitance to frequency converter. This frequency output is fed into f/v converter circuit, results a voltage output, this is given as input to ATMega328 microcontroller where the algorithm gives the final level as the output with the compensated non-linearity. \\
 \begin{figure}[h]
 \includegraphics[width=8cm]{blockdiagram.png}
 \centering
+\caption{Block Diagram}\label{block_diagram_img}
 \end{figure}
 \begin{figure}[h]
 \includegraphics[width=8cm]{setup.png}
 \centering
+\caption{Experimental Setup}\label{setup_img}
 \end{figure}
 
 \subsection{Results}
@@ -210,7 +220,8 @@ ATMega328 microcontroller is used to implement the neural network where the inpu
     forward Single layer ANN)&   &         \\ \hline
     ELM(Feed forward&98\% & sig \\ 
      Single layer ANN)&& \\ \hline
-    SVM Regression&100\%& gaussian\\ 
+    RBF(Feed forward&100\%& gaussian\\  
+    Single layer ANN)&& \\
     \hline
   \end{tabular}
 %%PLOTS
@@ -305,8 +316,9 @@ ATMega328 microcontroller is used to implement the neural network where the inpu
 
 
 \section{Conclusion}
-The conclusion goes here.
-
+All the single layer feed forward neural network, were on the same idea of support vector regression where the 
+inputs are mapped to higher dimensions using kernals which we choose in the hidden layer, where classification or regression can be done easily using linear interpreters. \\
+Here the response of the capacitive sensor is almost linear but with very small deviations. Where this noise is best interpolated using the gaussian kernal compared to others.\\
 
 
 
