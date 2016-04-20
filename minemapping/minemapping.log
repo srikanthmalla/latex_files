@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2016.3.17)  6 APR 2016 18:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.17)  2 APR 2016 17:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**capacitive_sensor.tex
-(./capacitive_sensor.tex
+**minemapping.tex
+(./minemapping.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 78 languages loaded.
-(./IEEEtran.cls
+(/usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
 Document Class: IEEEtran 2012/12/27 V1.8 by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -21,7 +21,7 @@ LaTeX Font Info:    Try loading font information for OT1+ptm on input line 368.
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
--- Using DVI output.
+-- Using PDF output.
 \@IEEEnormalsizeunitybaselineskip=\dimen104
 -- This is a 10 point document.
 \CLASSINFOnormalsizebaselineskip=\dimen105
@@ -66,7 +66,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/it' tr tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
 \IEEEilabelindentA=\dimen108
 \IEEEilabelindentB=\dimen109
 \IEEEilabelindent=\dimen110
@@ -123,8 +123,8 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen117
 \Gin@req@width=\dimen118
 )
-(./capacitive_sensor.aux)
-\openout1 = `capacitive_sensor.aux'.
+(./minemapping.aux)
+\openout1 = `minemapping.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
@@ -200,149 +200,83 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
+Underfull \hbox (badness 2376) in paragraph at lines 37--44
+[]\OT1/ptm/m/n/10 Surface min-ing is a huge earth mov-ing ac-tiv-ity on
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--44
+
+ []
+
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 60.
+(Font)              <7> on input line 46.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 60.
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 68.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 68.
+(Font)              <5> on input line 46.
+
+Underfull \hbox (badness 5771) in paragraph at lines 45--48
+\OT1/ptm/m/n/10 sur-face mines be-cause of its agility, ma-neu-ver-abil-ity,
+ []
+
+
+Underfull \hbox (badness 1694) in paragraph at lines 45--48
+\OT1/ptm/m/n/10 Here we have 4 de-grees of free-dom by our cov-er-age
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--48
+
+ []
+
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
+Underfull \hbox (badness 10000) in paragraph at lines 49--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--96
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
 
-<net.png, id=1, 551.05875pt x 458.71375pt>
-File: net.png Graphic file (type png)
- <use net.png>
-Package pdftex.def Info: net.png used on input line 98.
-(pdftex.def)             Requested size: 227.62204pt x 189.48073pt.
 
+Underfull \hbox (badness 10000) in paragraph at lines 64--68
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+ []
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Missing character: There is no Â in font ptmr7t!
-Missing character: There is no   in font ptmr7t!
-Missing character: There is no Â in font ptmr7t!
-Missing character: There is no   in font ptmr7t!
-Missing character: There is no Â in font ptmr7t!
-Missing character: There is no   in font ptmr7t!
-Missing character: There is no Â in font ptmr7t!
-Missing character: There is no   in font ptmr7t!
-
-Underfull \hbox (badness 10000) in paragraph at lines 110--115
+Underfull \hbox (badness 10000) in paragraph at lines 82--92
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--115
-
+Underfull \hbox (badness 2261) in paragraph at lines 82--92
+\OT1/ptm/m/n/10 Structure from Mo-tion (sfm) (ob-tain-ing 3d in-for-ma-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--130
-
+Underfull \hbox (badness 1655) in paragraph at lines 82--92
+\OT1/ptm/m/n/10 struc-ture from stereo vi-sion[ ]. In both the cases, the
  []
 
+<iris.png, id=17, 620.3175pt x 358.33875pt>
+File: iris.png Graphic file (type png)
+ <use iris.png>
+Package pdftex.def Info: iris.png used on input line 104.
+(pdftex.def)             Requested size: 170.71652pt x 98.61726pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--132
 
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
+[2]
 Missing character: There is no â in font ptmr7t!
-Missing character: There is no „ in font ptmr7t!
-Missing character: There is no ¦ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no „ in font ptmr7t!
-Missing character: There is no ¦ in font ptmr7t!
-
-Underfull \hbox (badness 10000) in paragraph at lines 134--137
-
- []
-
-<ctof.png, id=17, 464.73625pt x 386.44376pt>
-File: ctof.png Graphic file (type png)
- <use ctof.png>
-Package pdftex.def Info: ctof.png used on input line 140.
-(pdftex.def)             Requested size: 227.62204pt x 189.27065pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 138--145
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--152
-
- []
-
-<ftov.png, id=18, 547.04375pt x 391.4625pt>
-File: ftov.png Graphic file (type png)
- <use ftov.png>
-Package pdftex.def Info: ftov.png used on input line 160.
-(pdftex.def)             Requested size: 227.62204pt x 162.88397pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<blockdiagram.png, id=19, 555.07375pt x 555.07375pt>
-File: blockdiagram.png Graphic file (type png)
- <use blockdiagram.png>
-Package pdftex.def Info: blockdiagram.png used on input line 167.
-(pdftex.def)             Requested size: 227.62204pt x 227.62405pt.
-
-<setup.png, id=20, 715.67375pt x 353.32pt>
-File: setup.png Graphic file (type png)
- <use setup.png>
-Package pdftex.def Info: setup.png used on input line 172.
-(pdftex.def)             Requested size: 227.62204pt x 112.36923pt.
- [2 <./net.png> <./ctof.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<result1.png, id=29, 1454.43375pt x 840.13875pt>
-File: result1.png Graphic file (type png)
- <use result1.png>
-Package pdftex.def Info: result1.png used on input line 201.
-(pdftex.def)             Requested size: 227.62204pt x 131.47647pt.
-
-<result2.png, id=30, 1480.53125pt x 836.12375pt>
-File: result2.png Graphic file (type png)
- <use result2.png>
-Package pdftex.def Info: result2.png used on input line 207.
-(pdftex.def)             Requested size: 227.62204pt x 128.53891pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 215--218
-
- []
-
-[3 <./ftov.png> <./blockdiagram.png> <./setup.png> <./result1.png>]
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no © in font ptmr7t!
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no ¡ in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
 
 
 ** Conference Paper **
@@ -355,37 +289,37 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4
+[3
 
- <./result2.png>] (./capacitive_sensor.aux)
+ <./iris.png>] (./minemapping.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 2240 strings out of 493304
- 35541 string characters out of 6139871
- 100729 words of memory out of 5000000
- 5691 multiletter control sequences out of 15000+600000
- 37690 words of font info for 71 fonts, out of 8000000 for 9000
+ 2178 strings out of 493304
+ 34947 string characters out of 6139871
+ 99729 words of memory out of 5000000
+ 5640 multiletter control sequences out of 15000+600000
+ 34143 words of font info for 63 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
- 37i,8n,23p,941b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,8n,23p,1132b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/urw/times/utmri8a.pfb>
-Output written on capacitive_sensor.pdf (4 pages, 816351 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/times/utmri8a.pfb>
+Output written on minemapping.pdf (3 pages, 245442 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 66 PDF objects out of 1000 (max. 8388607)
+ 46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

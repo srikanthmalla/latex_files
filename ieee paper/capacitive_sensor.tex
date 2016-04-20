@@ -13,7 +13,7 @@
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
 % Do not put math or special symbols in the title.
-\title{Linearization of Capacitive Level Sensor using Soft Computing Techniques}
+\title{Intelligent Cylindrical Capacitive Level Sensor }
 
 
 % author names and affiliations
@@ -61,16 +61,8 @@ Jagdish Chandra Patra et al. propose Neural networks based scheme, when there is
 Artificial neural networks have emerged as a powerful learning technique to perform complex tasks nonlinear dynamic environments. An intelligent pressure sensor based on artificial neural networks to realize auto-calibration and nonlinear compensation of a CPS has been proposed with quite satisfactory performance. This technique can also be applied for other parameters such level etc. There are also some drawbacks of neural networks, such as neural networks can’t tell the redundant information from a huge amount of data, which will easily lead to some problems such as long training time and much computation. [3]\\
 As explained in the paper [4], the nonlinear operation of a Multi layer perceptron (MLP) neural network compensates the nonlinear characteristics of a sensor. Sensor linearization can be considered a function estimation (modeling) task, where the non-linear sensor output can be used as input data and the desired linearized response as target data. 
 The capability of a trained network can be measured to some extent by the errors on the training, validation and test sets. This can be done by applying unseen input to network and trace the output and compare with the sensor output. It has been proved successful in representing any measurable function within any desired degree of accuracy, with the correct values of pressures and sufficient number of hidden neurons. [5]
-% % You must have at least 2 lines in the paragraph with the drop letter
-% % (should never be an issue)
-% I wish you the best of success.
 
-% \hfill mds
- 
-% \hfill December 27, 2012
-
-\subsection{Hardware Description}
-Switzer manufacturer’s capacitive level transmitter is used for the experimentation, whose specifications are shown in the table1.
+\section{Hardware Description}
 \begin{table}[htdp]
 \begin{center}
   \begin{tabular}{ | l | c |}
@@ -83,11 +75,13 @@ Switzer manufacturer’s capacitive level transmitter is used for the experiment
     Capacitance range  & 0pF(min) to 5nF(max) \\ \hline
   \end{tabular}
 \end{center}
- \caption{hardware description}\label{tab:a}
+\caption{hardware description\label{tab:a}}
 \end{table}
-\subsection{Methodology}
-\subsubsection{Back Propagation Neural Network}
-The back propagation NN is trained using gradient descent algorithm, which updates the weights to minimize the error, in each epoch as shown in equation 1. \\
+Switzer manufacturer’s capacitive level transmitter is used for the experimentation, whose specifications are shown in the Table 1.
+
+\section{Methodology}
+\subsection{Back Propagation Neural Network}
+The back propagation NN is trained using gradient descent algorithm, which updates the weights to minimize the error, in each epoch as shown in equation 1 and the error is shown in equation 2\\
 \begin{equation} \label{eq:1}
 W_{n+1} = W_n-\eta \frac{dE}{dW_n}
 \end{equation}
@@ -100,14 +94,17 @@ Where,\\
 $\eta$ is the learning rate $0<\eta<1$, \\
 $W_i$ is value of weights at $i_{th}$ epoch
 
-This approach most of the times gets stuck in the local minima.  It is a generalization of the delta rule to multi-layered feedforward networks, made possible by using the chain rule to iteratively compute gradients for each layer.
 \begin{figure}[h]
 \includegraphics[width=8cm]{net.png}
 \centering
-\caption{Neural Network Structure}\label{net_img}
+\caption{Single Hidden Layer Neural Network Structure\label{Fig:1}}
 \end{figure}
-\subsubsection{RBF Neural Network}
-Here we use Gaussian function as the radial basis function, shown in equation 5. It can also be interpreted as a rather simple single-layer type of artificial neural network called a radial basis function network, with the radial basis functions taking on the role of the activation functions of the network. 
+It is a generalization of the delta rule to multi-layered feedforward networks, made possible by using the chain rule to iteratively compute gradients for each layer. The 
+architecture of the neural network used is shown in Figure 1.
+
+\subsection{RBF Neural Network}
+Here we use Gaussian function as the radial basis function, shown in equation 3. It can also be interpreted as a rather simple single-layer type of artificial neural network called a radial basis function network, with the radial basis functions taking on the role of the activation functions of the network. The means of the hidden layer are computed using K means clustering using k as number of hidden neurons.
+
 \begin{equation} \label{eq:3}
 \Phi(x) =   {e} ^ {\frac{- {||x-W||} ^ {2}}{{\sigma} ^ {2}}}
 \end{equation}\\
@@ -115,13 +112,14 @@ Here we use Gaussian function as the radial basis function, shown in equation 5.
 $\sigma^2$ is variance,\\
 x is input, $\Phi(x)$ is output of neuron\\
 W is the mean of the sigmoid function or weight of neuron\\
-\subsubsection{Extreme learning Machine}
+
+\subsection{Extreme learning Machine}
 ELM is one step training algorithm, it uses least squares method to estimate the best fit for the weights of the neural network. \\
-Here output layer weights are computed, where the hidden layer weights are assigned to the random value. The hidden layer output matrix is assigned as H, then 
-\begin{equation} \label{eq:3}
+Here output layer weights are computed, where the hidden layer weights are assigned to the random value. The hidden layer output matrix is assigned as H as shown in equation 4. Output weights $W_{out}$ are calculated as shown in equation 5.
+\begin{equation} \label{eq:4}
 H=XW_{hidden}^T+b_{hidden}
 \end{equation}
-\begin{equation} \label{eq:4}
+\begin{equation} \label{eq:5}
 W_{out}^T=H^+(y-b_{out})
 \end{equation}
 \\Where,\\
@@ -129,197 +127,95 @@ y is the target data,\\
 $H^+$ is the pseudo inverse of H,\\
 $b_{hidden}$ is the hidden layer bias vector,\\
 $b_{out}$ is output layer bias vector.\\
-\subsubsection{Signal conditioning}
-The frequency output of the 555 timer varies with the input capacitance in accordance with ().\\
-\begin{equation}\label{eq:3}
+\subsection{Signal conditioning}
+The frequency output of the 555 timer varies with the input capacitance in accordance with $(R_1+2R_2)$ as shown in equation 6.\\
+\begin{equation}\label{eq:6}
 f=\frac{1}{ln (2)C(R_1+2R_2)}
 \end{equation}
 Where, \\
-f is the frequency output and R1=1MΩ, R2=100KΩ
+f is the frequency output and R1=1MΩ, R2=100KΩ\\
+
+The circuit diagram of capacitance to frequency is shown in Figure 2.
 \begin{figure}[h]
 \includegraphics[width=8cm]{ctof.png}
 \centering
-\caption{capacitance to frequency circuit diagram}\label{ctof_img}
+\caption{capacitance to frequency circuit diagram}\label{Fig2}
 \end{figure}
-\\The high time and the low time in each pulse is given by (8) and (9) respectively.\\
-\begin{equation} \label{eq:4}
+\\The high time and the low time in each pulse is given by equation 7 and equation 8 respectively.\\
+\begin{equation} \label{eq:7}
 t_{high}= ln(2)C(R_1+R_2)                    
 \end{equation}
-\begin{equation} \label{eq:5}
+\begin{equation} \label{eq:8}
 t_{low}= ln(2)CR_2                          
 \end{equation}
-The frequency to voltage converter uses LM331 ic as shown in figure 2. $R_3$ resistance value depends on the supply voltage as shown in equation 9. The output voltage is obtained as shown in equation 10.\\
+The frequency to voltage converter uses LM331 IC as shown in Figure 3. $R_3$ resistance value depends on the supply voltage as shown in equation 9. The output voltage is obtained as shown in equation 10.\\
 
-\begin{equation} \label{eq:6}
+\begin{equation} \label{eq:9}
  R3= \frac{V_s-2}{2}1000\ \ \Omega           
  \end{equation}               
-\begin{equation} \label{eq:4}
+\begin{equation} \label{eq:10}
 V_{out} = 2.09\frac{R_4}{R_5+R_6}R_1C_1VF_{in}  
 \end{equation}            
 \begin{figure}[h]
 \includegraphics[width=8cm]{ftov.png}
 \centering
-\caption{frequency to voltage circuit diagram}\label{ftov_img}
+\caption{frequency to voltage circuit diagram}\label{Fig3}
 \end{figure}
-\subsection{Implementation}
-ATMega328 microcontroller is used to implement the neural network where the input voltage is taken and their respective outputs are obtained and is displayed. Fig.3 shows the systematic flow. The input, which is level when changes, the capacitance of the cylindrical capacitive sensor changes results in change in frequency output of the capacitance to frequency converter. This frequency output is fed into f/v converter circuit, results a voltage output, this is given as input to ATMega328 microcontroller where the algorithm gives the final level as the output with the compensated non-linearity. \\
+\section{Implementation}
+ATMega328 microcontroller is used to implement the neural network where the input voltage is taken and their respective outputs are obtained and is displayed. Figure 4 shows the systematic flow of the procedure. The input, which is level when changes, the capacitance of the cylindrical capacitive sensor changes results in change in frequency output of the capacitance to frequency converter. This frequency output is fed into f/v converter circuit, results a voltage output, this is given as input to ATMega328 microcontroller where the algorithm gives the final level as the output with the compensated non-linearity. The experimental setup is shown in Figure 5.\\
 \begin{figure}[h]
 \includegraphics[width=8cm]{blockdiagram.png}
 \centering
-\caption{Block Diagram}\label{block_diagram_img}
+\caption{Block Diagram}\label{Fig4}
 \end{figure}
 \begin{figure}[h]
 \includegraphics[width=8cm]{setup.png}
 \centering
-\caption{Experimental Setup}\label{setup_img}
+\caption{Experimental Setup}\label{Fig5}
 \end{figure}
 
-\subsection{Results}
+\section{Results}
+\begin{table}
 \begin{center}
-  \begin{tabular}{ | l | c  | r |}
+  \begin{tabular}{ | c | c  | c | c |}
     \hline
-    Method & Accuracy  & Function used\\ \hline
-    Back Propagation (Feed  & 99\% & tansig \\ 
-    forward Single layer ANN)&   &         \\ \hline
-    ELM(Feed forward&98\% & sig \\ 
-     Single layer ANN)&& \\ \hline
-    RBF(Feed forward&100\%& gaussian\\  
-    Single layer ANN)&& \\
+    Method & Accuracy  & Function used & no of \\
+    &&&neurons\\ \hline
+    Back Propagation  & 99.8\% & tansig& 4 \\ 
+    (Feed forward &&& \\
+     Single layer ANN)&   &    &     \\ \hline
+    ELM(Feed &98\% & sig &10\\ 
+     forward Single &&& \\ 
+     layer ANN)&&&\\ \hline
+    RBF(Feed forward&99.84\%& gaussian& 13\\  
+    Single layer ANN)&& &\\
     \hline
   \end{tabular}
-%%PLOTS
-
-
-
-
+\caption{Results\label{tab:b}}
 \end{center}
-% An example of a floating figure using the graphicx package.
-% Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
-% Note that IEEEtran v1.7 and later has special internal code that
-% is designed to preserve the operation of \label within \caption
-% even when the captionsoff option is in effect. However, because
-% of issues like this, it may be the safest practice to put all your
-% \label just after \caption rather than within \caption{}.
-%
-% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
-% option should be used if it is desired that the figures are to be
-% displayed while in draft mode.
-%
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex, 
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation Results.}
-%\label{fig_sim}
-%\end{figure}
+\end{table}
+Sensor output with water is 92.7\% linear, where as with soap solution it is 87\% linear. After training the single layer neural networks with methods shown in Table 2 with the ideal response of the capacitive sensor without any noise, the results which are obtained is shown in Table 2. 
 
-% Note that IEEE typically puts floats only at the top, even when this
-% results in a large percentage of a column being occupied by floats.
+%%PLOTS
+\begin{figure}[h]
+\includegraphics[width=8cm]{result1.png}
+\centering
+\caption{Response of network with dielectric constant 80}\label{Fig6}
+\end{figure}
 
-
-% An example of a double column floating figure using two subfigures.
-% (The subfig.sty package must be loaded for this to work.)
-% The subfigure \label commands are set within each subfloat command,
-% and the \label for the overall figure must come after \caption.
-% \hfil is used as a separator to get equal spacing.
-% Watch out that the combined width of all the subfigures on a 
-% line do not exceed the text width or a line break will occur.
-%
-%\begin{figure*}[!t]
-%\centering
-%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
-%\label{fig_first_case}}
-%\hfil
-%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
-%\label{fig_second_case}}
-%\caption{Simulation results.}
-%\label{fig_sim}
-%\end{figure*}
-%
-% Note that often IEEE papers with subfigures do not employ subfigure
-% captions (using the optional argument to \subfloat[]), but instead will
-% reference/describe all of them (a), (b), etc., within the main caption.
-
-
-% An example of a floating table. Note that, for IEEE style tables, the 
-% \caption command should come BEFORE the table. Table text will default to
-% \footnotesize as IEEE normally uses this smaller font for tables.
-% The \label must come after \caption as always.
-%
-%\begin{table}[!t]
-%% increase table row spacing, adjust to taste
-%\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-%\caption{An Example of a Table}
-%\label{table_example}
-%\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
-%\end{tabular}
-%\end{table}
-
-
-% Note that IEEE does not put floats in the very first column - or typically
-% anywhere on the first page for that matter. Also, in-text middle ("here")
-% positioning is not used. Most IEEE journals/conferences use top floats
-% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
-% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
-% command of the stfloats package.
-
+\begin{figure}[h]
+\includegraphics[width=8cm]{result2.png}
+\centering
+\caption{Response of network with dielectric constant 90}\label{Fig7}
+\end{figure}
+The response of the networks with two different liquids are shown in Figure 6 and Figure 7.
 
 
 \section{Conclusion}
 All the single layer feed forward neural network, were on the same idea of support vector regression where the 
 inputs are mapped to higher dimensions using kernals which we choose in the hidden layer, where classification or regression can be done easily using linear interpreters. \\
-Here the response of the capacitive sensor is almost linear but with very small deviations. Where this noise is best interpolated using the gaussian kernal compared to others.\\
+Here the response of the capacitive sensor is almost linear but with very small deviations. Where this noise is best interpolated using the tansig kernal compared to others, with just four neurons.\\
 
-
-
-% conference papers do not normally have an appendix
-
-
-% use section* for acknowledgement
-\section*{Acknowledgment}
-
-
-The authors would like to thank...
-
-
-
-
-
-% trigger a \newpage just before the given reference
-% number - used to balance the columns on the last page
-% adjust value as needed - may need to be readjusted if
-% the document is modified later
-%\IEEEtriggeratref{8}
-% The "triggered" command can be changed if desired:
-%\IEEEtriggercmd{\enlargethispage{-5in}}
-
-% references section
-
-% can use a bibliography generated by BibTeX as a .bbl file
-% BibTeX documentation can be easily obtained at:
-% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
-% The IEEEtran BibTeX style support page is at:
-% http://www.michaelshell.org/tex/ieeetran/bibtex/
-%\bibliographystyle{IEEEtran}
-% argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
-%
-% <OR> manually copy in the resultant .bbl file
-% set second argument of \begin to the number of references
-% (used to reserve space for the reference number labels box)
 \begin{thebibliography}{1}
 
 \bibitem{}
@@ -337,9 +233,9 @@ Medrano-Marqués, Nicolás J., and Bonifacio Martin-del-Brio. \emph{Sensor linea
 \bibitem{}
 Khosravi, Mahdi, and Amir Abolfazl Suratgar. \emph{A model of optical micro electro mechanical pressure sensor using artificial neural networks.}\hskip 1em plus
   0.5em minus 0.4em\relax Electrical Engineering (ICEE), 2011 19th Iranian Conference on. IEEE, 2011.
-\bibitem{}
- Khosravi, Mahdi, and Amir Abolfazl Suratgar. \emph{A model of optical micro electro mechanical pressure sensor using artificial neural networks.}\hskip 1em plus
-  0.5em minus 0.4em\relax Electrical Engineering (ICEE), 2011 19th Iranian Conference on. IEEE, 2011.
+% \bibitem{}
+%  Khosravi, Mahdi, and Amir Abolfazl Suratgar. \emph{A model of optical micro electro mechanical pressure sensor using artificial neural networks.}\hskip 1em plus
+%   0.5em minus 0.4em\relax Electrical Engineering (ICEE), 2011 19th Iranian Conference on. IEEE, 2011.
 
 \end{thebibliography}
 

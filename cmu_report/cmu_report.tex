@@ -1,0 +1,39 @@
+\documentclass[11pt,twoside,a4paper]{article}
+\usepackage{mathtools}
+\begin{document}
+\section{Single dimension}
+Given robot position r and point on wall "x" along with frame width 2b. The step function looks like:
+\begin{equation}
+S(x,r)=\frac{1}{1+e^{-a(-r+x+b)}}+\frac{1}{1+e^{a(-r+x-b)}}-1
+\end{equation}
+\begin{equation}
+S(r,x)=\frac{2+e^{-ab}(e^{-a(-r+x)}+e^{a(-r+x)})}{(e^{-ab}(e^{-a(-r+x)}+e^{a(-r+x)})+e^{-2ab}+1)}-1
+\end{equation}
+
+\begin{equation}
+e^{-a(-r+x)}+e^{a(-r+x)}=2cosh(a(-r+x))
+\end{equation}
+
+\begin{equation}
+e^{-ab}=k
+\end{equation}
+by solving it further, and substituting eq 3,4 in eq 2
+\begin{equation}
+S(r,x)=\frac{2(1+kcosh(a(-r+x)))}{k(2cosh(a(-r+x))+k)+1}-1
+\end{equation}
+Expection of point x is covered on wall is
+\begin{equation}
+E(x)=\int_{-inf}^{+inf} P(r) S(r,x) dr 
+\end{equation}
+
+
+Consider one dimension space x and position distribution to be gaussian
+\begin{equation}
+P(r)=\frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x-r}{\sigma})^2}
+\end{equation}
+Then expectation becomes
+\begin{equation}
+E(x)=
+\end{equation}
+
+\end{document}
